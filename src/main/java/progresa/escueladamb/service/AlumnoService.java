@@ -18,24 +18,16 @@ public class AlumnoService {
     public List<Alumno> getAlumnos(){
         return alumnoRepository.findAll();
     }
-    public void saveAlumno(Alumno alumno){
-        alumnoRepository.save(alumno);
+    public Alumno saveAlumno(Alumno alumno){
+        return alumnoRepository.save(alumno);
     }
-    public void deleteAlumno(Long id){
+    public void deleteAlumnoByID(Long id){
         alumnoRepository.deleteById(id);
     }
-
     public boolean existeAlumnoById(Long id){
         return alumnoRepository.existsById(id);
     }
-    public boolean existeAlumnoByDni(String dni){
-        return alumnoRepository.existsByDni(dni);
-    }
-    Optional<Alumno> findById(Long id) {
+    public Optional<Alumno> findById(Long id) {
         return alumnoRepository.findById(id);
     }
-    Optional<Alumno> findByDni(String dni) {
-        return alumnoRepository.findByDni(dni);
-    }
-
 }
