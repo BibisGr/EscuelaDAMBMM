@@ -5,6 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import progresa.escueladamb.entity.Alumno;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -12,8 +15,9 @@ import lombok.Setter;
 @NoArgsConstructor
 public class CursoDTO {
     private String nombre;
-    private String descripcion;
-    private String fechaInicio;
-    private String fechaFin;
+//    private String descripcion;
+//    private String fechaInicio;
+//    private String fechaFin;
     private Number creditos;
+    private List<Alumno> alumnos;
 }

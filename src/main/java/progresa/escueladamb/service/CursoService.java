@@ -33,10 +33,14 @@ public class CursoService {
     public boolean existeCursoByNombre(String nombre){
         return cursoRepository.existsByNombre(nombre);
     }
-    Optional<Curso> findById(Long id) {
+    public Optional<Curso> findById(Long id) {
         return cursoRepository.findById(id);
     }
-    Optional<Curso> findByNombre(String nombre) {
+    public Optional<Curso> findByNombre(String nombre) {
         return cursoRepository.findByNombre(nombre);
+    }
+
+    public List<Curso> findAllById(List<Long> ids){
+        return cursoRepository.findAllById(ids);
     }
 }
