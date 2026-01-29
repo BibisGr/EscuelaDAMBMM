@@ -26,12 +26,6 @@ public class Curso {
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
-//    @Column(name = "descricion", nullable = false)
-//    private String descripcion;
-//    @Column(name = "fechaInicio", nullable = false)
-//    private String fechaInicio;
-//    @Column(name = "fechaFin", nullable = false)
-//    private String fechaFin;
     @Column(name = "creditos", nullable = false)
     private Number creditos;
 

@@ -22,21 +22,8 @@ public class Alumno {
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
-//    @Column(name = "Apellidos", nullable = false)
-//    private String apellidos;
-//    @Column(name = "FechaNaciemiento", nullable = false)
-//    private String fechaNaciemiento;
-//    @Column(name = "dni", nullable = false)
-//    private String dni;
-//    @Column(name = "email", nullable = false)
-//    private String email;
-
-//    @OneToMany(mappedBy = "alumno")
-//    @JsonIgnore
-//    private List<Inscripciones> inscripciones = new ArrayList<>();
-
     @ManyToMany()
-//    @JsonIgnore
+//
     @JsonManagedReference
     @JoinTable(
             name="alumno_curso",
