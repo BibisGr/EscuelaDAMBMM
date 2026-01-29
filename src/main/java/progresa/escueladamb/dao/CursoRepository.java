@@ -6,6 +6,6 @@ import progresa.escueladamb.entity.Curso;
 import java.util.Optional;
 
 public interface CursoRepository extends JpaRepository<Curso, Long> {
-    Optional<Curso> findByNombre(String nombre);
-    boolean existsByNombre(String nombre);
+    public  Optional<Curso> findByNombre(String nombre);
+    public  boolean existsByNombre(String nombre);
 }

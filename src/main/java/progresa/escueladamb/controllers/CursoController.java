@@ -25,7 +25,8 @@ public class CursoController {
     }
 
     @GetMapping("/buscarById/{id}")
-    public ResponseEntity<?> buscarById(Long id){
+    public ResponseEntity<?> buscarById(
+            @PathVariable Long id){
         if(!cursoService.existeCursoById(id)){
             return new ResponseEntity(new Mensaje("Curso no encontrado"),
                     HttpStatus.NOT_FOUND);
@@ -33,7 +34,8 @@ public class CursoController {
         return ResponseEntity.ok(cursoService.findById(id));
     }
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteById(Long id){
+    public ResponseEntity<?> deleteById(
+            @PathVariable Long id){
         if(!cursoService.existeCursoById(id)){
             return new ResponseEntity(new Mensaje("Curso no encontrado"),
                     HttpStatus.NOT_FOUND);

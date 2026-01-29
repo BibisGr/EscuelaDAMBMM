@@ -31,7 +31,8 @@ public class AlumnoController {
     }
 
     @GetMapping("/buscarById/{id}")
-    public ResponseEntity<?> buscarById(Long id){
+    public ResponseEntity<?> buscarById(
+            @PathVariable  Long id){
         if(!alumnoService.existeAlumnoById(id)){
             return new ResponseEntity(new Mensaje("Alumno no encontrado"),
                     HttpStatus.NOT_FOUND);
@@ -39,7 +40,8 @@ public class AlumnoController {
         return ResponseEntity.ok(alumnoService.findById(id));
     }
     @DeleteMapping("/delete/{id}")
-    public ResponseEntity<?> deleteById(Long id){
+    public ResponseEntity<?> deleteById(
+            @PathVariable  Long id){
         if(!alumnoService.existeAlumnoById(id)){
             return new ResponseEntity(new Mensaje("Curso no encontrado"),
                     HttpStatus.NOT_FOUND);
@@ -91,9 +93,9 @@ public class AlumnoController {
         List<Curso> cursos = cursoService.findAllById(cursoIds);
 
         //verifica que el listado de cursos del alumno tenga
-        //el mismo tamaño que los listado de ids proporcionados
-        if(cursos.isEmpty() || cursos.size() !=cursoIds.size()){
-            new ResponseEntity(new Mensaje("Uno o mas cursos no fueron encontrados"),
+        //el mismo tamaño (o menor) que los listado de ids proporcionados
+        if(cursos.isEmpty() || cursos.size() != cursoIds.size()){
+           return new ResponseEntity(new Mensaje("Uno o mas cursos no fueron encontrados"),
                     HttpStatus.BAD_REQUEST);
         }
 
