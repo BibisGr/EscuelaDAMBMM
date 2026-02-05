@@ -84,7 +84,6 @@ public class AlumnoController {
         //obtener el estudiante
         Optional<Alumno> alumnoOpt =
                 alumnoService.findById(idAlumno);
-
         if (alumnoOpt.isEmpty()){
             return new ResponseEntity(new Mensaje("Alumno no encontrado"),
                     HttpStatus.NOT_FOUND);

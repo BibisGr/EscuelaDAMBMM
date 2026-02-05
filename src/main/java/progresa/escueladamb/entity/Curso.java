@@ -7,7 +7,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import progresa.escueladamb.validators.EstadoCurso;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -28,6 +30,18 @@ public class Curso {
     private String nombre;
     @Column(name = "creditos", nullable = false)
     private Number creditos;
+
+    @Column(name = "fechaInicio", nullable = false)
+    private LocalDate fechaInicio;
+
+    @Column(name = "fechaFin", nullable = false)
+    private LocalDate fechaFin;
+
+    @Column(name = "estado", nullable = false)
+    @Enumerated(EnumType.STRING)
+    private EstadoCurso estado;
+
+
 
 //    @OneToMany(mappedBy = "curso")
 //    @JsonIgnore

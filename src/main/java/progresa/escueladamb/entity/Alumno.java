@@ -22,6 +22,17 @@ public class Alumno {
 
     @Column(name = "nombre", nullable = false)
     private String nombre;
+
+    @Column(name = "apellidos", nullable = false)
+    private String apellidos;
+
+    @Column(name = "dni", nullable = false, unique = true)
+    private String dni;
+
+    @Column(name = "email", nullable = false, unique = true)
+    private String email;
+
+
     @ManyToMany()
 //
     @JsonManagedReference

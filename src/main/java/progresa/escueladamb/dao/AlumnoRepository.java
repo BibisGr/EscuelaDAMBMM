@@ -6,6 +6,7 @@ import progresa.escueladamb.entity.Alumno;
 import java.util.Optional;
 
 public interface AlumnoRepository  extends JpaRepository<Alumno, Long> {
+    boolean existsByEmail(String email);
 //    public Optional<Alumno> findById(Long id);
 //    public boolean existsById(Long id);
 //    public Optional<Alumno> findByNombre(String nombre);
